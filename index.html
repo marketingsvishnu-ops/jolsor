@@ -1,1174 +1,357 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CricketZone 360 | Cricket News, Live Scores & Sports Updates</title>
+<title>Demo</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f3f5f8;
-    color:#17202a;
+  background:#0f1020;
+  color:white;
 }
 
-/* TOP BAR */
-.topbar{
-    background:#071d16;
-    color:#fff;
-    padding:9px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:13px;
-}
-
-.topbar a{
-    color:#c8f7dc;
-    text-decoration:none;
-    margin-left:18px;
-}
-
-/* HEADER */
-header{
-    background:#08783d;
-    color:white;
-    padding:20px 5%;
-}
-
-.header-inner{
-    max-width:1400px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.logo{
-    font-size:31px;
-    font-weight:900;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:#ffe600;
-}
-
-.tagline{
-    font-size:13px;
-    opacity:.9;
-}
-
-/* NAV */
-nav{
-    background:#ffffff;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    position:sticky;
-    top:0;
-    z-index:50;
-}
-
-.nav-inner{
-    max-width:1400px;
-    margin:auto;
-    display:flex;
-    overflow-x:auto;
-}
-
-nav a{
-    text-decoration:none;
-    color:#17202a;
-    font-weight:bold;
-    padding:17px 18px;
-    white-space:nowrap;
-}
-
-nav a:hover{
-    color:#08783d;
-    background:#f1fff6;
-}
-
-/* BREAKING NEWS */
-.breaking{
-    background:#111;
-    color:white;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-}
-
-.breaking-label{
-    background:#e31b23;
-    padding:13px 22px;
-    font-weight:900;
-    white-space:nowrap;
-}
-
-.ticker{
-    padding:13px 20px;
-    white-space:nowrap;
-    animation:ticker 25s linear infinite;
-}
-
-@keyframes ticker{
-    from{transform:translateX(100%);}
-    to{transform:translateX(-100%);}
-}
-
-/* MAIN */
 .container{
-    max-width:1400px;
-    margin:30px auto;
-    padding:0 20px;
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
 }
 
-/* HERO */
-.hero{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:22px;
-    margin-bottom:30px;
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
 }
 
-.hero-main{
-    min-height:430px;
-    border-radius:16px;
-    overflow:hidden;
-    position:relative;
-    background:
-      linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05)),
-      url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1400&q=80")
-      center/cover;
-    display:flex;
-    align-items:flex-end;
-    color:white;
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
 }
 
-.hero-content{
-    padding:35px;
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#181a35,#0b0c18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
 }
 
-.category{
-    display:inline-block;
-    background:#08a653;
-    color:white;
-    padding:7px 12px;
-    border-radius:5px;
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:12px;
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #9C27B0;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(156,39,176,.28);
 }
 
-.hero h1{
-    font-size:40px;
-    line-height:1.08;
-    margin-bottom:12px;
+.badge{
+  display:inline-block;
+  background:#9C27B0;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
 }
 
-.hero p{
-    color:#ddd;
+h1{
+  font-size:34px;
+  color:#9C27B0;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
+}
+
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
+
+.feature{
+  background:linear-gradient(90deg,#1b1b1b,#2b2208);
+  border:1px solid rgba(212,175,55,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
+}
+
+.feature span{
+  color:#9C27B0;
+}
+
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #1ebe5d;
+  transition:.3s;
+}
+
+.signup-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.03);
+}
+
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.website-row a{
+  text-decoration:none;
+}
+
+.website{
+  color:#25D366;
+}
+
+.whatsapp-small{
+  color:#9C27B0;
+}
+
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
+}
+
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#9C27B0;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(156,39,176,0.6);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#7B1FA2;
+  box-shadow:0 12px 25px rgba(156,39,176,0.8);
+}
+
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
+
+  .demo,
+  .right{
+    width:100%;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
+}
+
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
     font-size:16px;
-}
+  }
 
-/* SIDE STORIES */
-.side-news{
-    display:grid;
-    gap:15px;
-}
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
 
-.side-card{
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    display:flex;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.side-card img{
-    width:145px;
-    height:125px;
-    object-fit:cover;
-}
-
-.side-content{
-    padding:15px;
-}
-
-.side-content h3{
-    font-size:17px;
-    line-height:1.25;
-}
-
-.date{
-    color:#888;
-    font-size:12px;
-    margin-top:10px;
-}
-
-/* SECTION */
-.section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:35px 0 18px;
-}
-
-.section-title h2{
-    font-size:27px;
-    border-left:5px solid #08783d;
-    padding-left:12px;
-}
-
-.view-all{
-    color:#08783d;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* LIVE SCORE */
-.score-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.score-card{
-    background:white;
-    border-radius:13px;
-    padding:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.match-status{
-    color:#e31b23;
-    font-weight:bold;
-    font-size:12px;
-    margin-bottom:15px;
-}
-
-.teams{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.team{
-    font-weight:bold;
-}
-
-.team-score{
-    font-size:25px;
-    font-weight:900;
-    margin-top:5px;
-}
-
-.vs{
-    color:#999;
-    font-weight:bold;
-}
-
-.result{
-    background:#f0faf4;
-    color:#08783d;
-    padding:9px;
-    border-radius:6px;
-    margin-top:15px;
-    font-size:13px;
-}
-
-/* NEWS GRID */
-.content-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:25px;
-}
-
-.news-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.news-card{
-    background:white;
-    border-radius:13px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.news-card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-}
-
-.news-content{
-    padding:18px;
-}
-
-.news-content h3{
-    font-size:20px;
-    line-height:1.25;
-    margin:8px 0;
-}
-
-.news-content p{
-    color:#666;
-    line-height:1.5;
+  .signup-btn{
     font-size:14px;
-}
+    padding:8px 13px;
+  }
 
-/* SIDEBAR */
-.sidebar-box{
-    background:white;
-    padding:20px;
-    border-radius:13px;
-    margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.sidebar-box h3{
-    border-bottom:2px solid #eee;
-    padding-bottom:12px;
-    margin-bottom:12px;
-}
-
-.mini-news{
-    padding:13px 0;
-    border-bottom:1px solid #eee;
-}
-
-.mini-news:last-child{
-    border-bottom:0;
-}
-
-.mini-news strong{
-    display:block;
-    line-height:1.3;
-}
-
-.mini-news span{
-    color:#888;
-    font-size:11px;
-}
-
-/* BLOG */
-.blog-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.blog-card{
-    background:white;
-    border-radius:13px;
-    padding:22px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.blog-card .author{
-    color:#08783d;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.blog-card h3{
-    font-size:21px;
-    margin:12px 0;
-}
-
-.blog-card p{
-    color:#666;
-    line-height:1.55;
-}
-
-/* TABLE */
-.table-box{
-    background:white;
-    border-radius:13px;
-    padding:20px;
-    overflow-x:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,td{
-    padding:14px;
-    border-bottom:1px solid #eee;
-    text-align:left;
-}
-
-th{
-    background:#08783d;
-    color:white;
-}
-
-td:first-child{
-    font-weight:bold;
-}
-
-/* NEWSLETTER */
-.newsletter{
-    margin-top:40px;
-    background:linear-gradient(120deg,#063d22,#08a653);
-    color:white;
-    padding:45px;
-    border-radius:16px;
-    text-align:center;
-}
-
-.newsletter h2{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.newsletter p{
-    margin-bottom:22px;
-    color:#d8f7e6;
-}
-
-.newsletter form{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-}
-
-.newsletter input{
-    flex:1;
+  .cta{
+    font-size:18px;
     padding:15px;
-    border:0;
-    border-radius:7px 0 0 7px;
-    font-size:15px;
-}
+  }
 
-.newsletter button{
-    background:#ffe600;
-    border:0;
-    padding:15px 24px;
-    font-weight:bold;
-    border-radius:0 7px 7px 0;
-    cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-    background:#071d16;
-    color:white;
-    margin-top:45px;
-    padding:45px 5%;
-}
-
-.footer-grid{
-    max-width:1400px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:30px;
-}
-
-footer h3{
-    margin-bottom:15px;
-}
-
-footer p{
-    color:#aebdb5;
-    line-height:1.6;
-}
-
-footer a{
-    display:block;
-    color:#aebdb5;
-    text-decoration:none;
-    margin:9px 0;
-}
-
-.copyright{
-    max-width:1400px;
-    margin:35px auto 0;
-    padding-top:20px;
-    border-top:1px solid #294137;
-    color:#8fa198;
-    font-size:13px;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-    .hero{
-        grid-template-columns:1fr;
-    }
-
-    .content-grid{
-        grid-template-columns:1fr;
-    }
-
-    .score-grid{
-        grid-template-columns:1fr;
-    }
-
-    .blog-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .topbar{
-        display:none;
-    }
-
-    .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .logo{
-        font-size:25px;
-    }
-
-    .hero-main{
-        min-height:350px;
-    }
-
-    .hero h1{
-        font-size:28px;
-    }
-
-    .hero-content{
-        padding:22px;
-    }
-
-    .news-grid{
-        grid-template-columns:1fr;
-    }
-
-    .side-card img{
-        width:110px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .newsletter{
-        padding:30px 20px;
-    }
-
-    .newsletter form{
-        flex-direction:column;
-    }
-
-    .newsletter input,
-    .newsletter button{
-        border-radius:6px;
-        margin:3px 0;
-    }
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-    <div>Tuesday, October 6, 2026</div>
-    <div>
-        <a href="#">Facebook</a>
-        <a href="#">YouTube</a>
-        <a href="#">Instagram</a>
-        <a href="#">X</a>
-    </div>
-</div>
+<div class="container">
 
-<!-- HEADER -->
-<header>
-    <div class="header-inner">
-        <div>
-            <div class="logo">🏏 CRICKET<span>ZONE 360</span></div>
-            <div class="tagline">
-                Cricket News • Live Scores • Match Analysis • Sports Updates
-            </div>
-        </div>
+  <div class="demo">
+    <a href="https://cbtf.com/clk?src=dvOFld5Vu" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 CLICK ON SIGNUP 🔥</a>
+    <iframe src="https://cbtf.com/clk?src=dvOFld5Vu"></iframe>
+  </div>
 
-        <div>
-            🔴 LIVE SPORTS NEWS
-        </div>
-    </div>
-</header>
+  <div class="right">
+    <div class="box">
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="nav-inner">
-        <a href="#">HOME</a>
-        <a href="#">LIVE SCORES</a>
-        <a href="#">CRICKET NEWS</a>
-        <a href="#">INDIA</a>
-        <a href="#">PAKISTAN</a>
-        <a href="#">AUSTRALIA</a>
-        <a href="#">ENGLAND</a>
-        <a href="#">IPL</a>
-        <a href="#">T20</a>
-        <a href="#">ODI</a>
-        <a href="#">TEST</a>
-        <a href="#">WOMEN'S CRICKET</a>
-        <a href="#">BLOGS</a>
-        <a href="#">RANKINGS</a>
-    </div>
-</nav>
+```
+  <div class="badge">AUTO WEBSITE</div>
 
-<!-- BREAKING NEWS -->
-<div class="breaking">
-    <div class="breaking-label">BREAKING</div>
+  <h1>Get Your ID Now</h1>
 
-    <div class="ticker">
-        🏏 Latest cricket news and match updates • India vs West Indies T20I series •
-        Pakistan announce new T20 leadership • ICC World Cup 2027 updates •
-        Latest rankings, transfers and team news
-    </div>
-</div>
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
 
-<main class="container">
+  <div class="features">www.cbtf.com
 
-<!-- HERO -->
-<section class="hero">
-
-    <article class="hero-main">
-        <div class="hero-content">
-            <span class="category">TOP STORY</span>
-
-            <h1>
-                Cricket World Reacts to Another Action-Packed Week of International Cricket
-            </h1>
-
-            <p>
-                Get the latest match reports, breaking stories, player news,
-                expert analysis and everything happening around world cricket.
-            </p>
-
-            <div class="date">Updated Today • CricketZone 360</div>
-        </div>
-    </article>
-
-    <div class="side-news">
-
-        <article class="side-card">
-            <img src="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&w=500&q=80">
-
-            <div class="side-content">
-                <span class="category">NEWS</span>
-                <h3>India and West Indies prepare for another exciting T20 battle</h3>
-                <div class="date">Today</div>
-            </div>
-        </article>
-
-        <article class="side-card">
-            <img src="https://images.unsplash.com/photo-1593766827228-8737b3e060f3?auto=format&fit=crop&w=500&q=80">
-
-            <div class="side-content">
-                <span class="category">WORLD CRICKET</span>
-                <h3>Pakistan make major change to T20 leadership</h3>
-                <div class="date">Today</div>
-            </div>
-        </article>
-
-        <article class="side-card">
-            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=500&q=80">
-
-            <div class="side-content">
-                <span class="category">ICC</span>
-                <h3>New cricket playing rules bring major changes</h3>
-                <div class="date">Latest</div>
-            </div>
-        </article>
-
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
 
-</section>
-
-
-<!-- LIVE MATCHES -->
-<div class="section-title">
-    <h2>🔴 Live & Recent Matches</h2>
-    <a class="view-all" href="#">View All →</a>
-</div>
-
-<section class="score-grid">
-
-    <div class="score-card">
-        <div class="match-status">● LIVE</div>
-
-        <div class="teams">
-            <div>
-                <div class="team">India 🇮🇳</div>
-                <div class="team-score">351/7</div>
-                <small>50 Overs</small>
-            </div>
-
-            <div class="vs">VS</div>
-
-            <div>
-                <div class="team">West Indies 🌴</div>
-                <div class="team-score">352/5</div>
-                <small>49.2 Overs</small>
-            </div>
-        </div>
-
-        <div class="result">
-            West Indies won by 5 wickets
-        </div>
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
 
-
-    <div class="score-card">
-        <div class="match-status">● COMPLETED</div>
-
-        <div class="teams">
-            <div>
-                <div class="team">India 🇮🇳</div>
-                <div class="team-score">Gold 🥇</div>
-            </div>
-
-            <div class="vs">VS</div>
-
-            <div>
-                <div class="team">Pakistan 🇵🇰</div>
-                <div class="team-score">Silver 🥈</div>
-            </div>
-        </div>
-
-        <div class="result">
-            India won the Asian Games final
-        </div>
+    <div class="feature">
+      Auto Website Support:
+      <a
+        class="signup-btn"
+        href="https://cbtf.com/clk?src=dvOFld5Vu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click on Signup
+      </a>
     </div>
 
-
-    <div class="score-card">
-        <div class="match-status">● UPCOMING</div>
-
-        <div class="teams">
-            <div>
-                <div class="team">India 🇮🇳</div>
-                <div class="team-score">T20I</div>
-            </div>
-
-            <div class="vs">VS</div>
-
-            <div>
-                <div class="team">West Indies 🌴</div>
-                <div class="team-score">T20I</div>
-            </div>
-        </div>
-
-        <div class="result">
-            Match starts soon
-        </div>
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
     </div>
 
-</section>
-
-
-<!-- NEWS + SIDEBAR -->
-<div class="section-title">
-    <h2>📰 Latest Cricket News</h2>
-    <a class="view-all" href="#">More News →</a>
-</div>
-
-<section class="content-grid">
-
-    <div class="news-grid">
-
-        <article class="news-card">
-            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80">
-
-            <div class="news-content">
-                <span class="category">INTERNATIONAL</span>
-
-                <h3>
-                    India and West Indies ready for another major T20I contest
-                </h3>
-
-                <p>
-                    Follow team news, probable XI, player form, pitch report,
-                    match prediction and live updates.
-                </p>
-
-                <div class="date">October 6, 2026</div>
-            </div>
-        </article>
-
-
-        <article class="news-card">
-            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=900&q=80">
-
-            <div class="news-content">
-                <span class="category">ICC</span>
-
-                <h3>
-                    ICC introduces important changes to cricket playing conditions
-                </h3>
-
-                <p>
-                    New rules are designed to improve the pace of play and
-                    strengthen match regulations.
-                </p>
-
-                <div class="date">October 2026</div>
-            </div>
-        </article>
-
-
-        <article class="news-card">
-            <img src="https://images.unsplash.com/photo-1593766827228-8737b3e060f3?auto=format&fit=crop&w=900&q=80">
-
-            <div class="news-content">
-                <span class="category">PAKISTAN</span>
-
-                <h3>
-                    Pakistan announce major T20 leadership change
-                </h3>
-
-                <p>
-                    A new captain will lead Pakistan in their upcoming
-                    international T20 assignments.
-                </p>
-
-                <div class="date">October 5, 2026</div>
-            </div>
-        </article>
-
-
-        <article class="news-card">
-            <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?auto=format&fit=crop&w=900&q=80">
-
-            <div class="news-content">
-                <span class="category">WORLD CUP</span>
-
-                <h3>
-                    Cricket World Cup 2027 preparations gather pace
-                </h3>
-
-                <p>
-                    Teams are already planning their squads and strategies
-                    for the next major ODI World Cup.
-                </p>
-
-                <div class="date">October 2026</div>
-            </div>
-        </article>
-
-    </div>
-
-
-    <!-- SIDEBAR -->
-    <aside>
-
-        <div class="sidebar-box">
-
-            <h3>🔥 Trending Cricket</h3>
-
-            <div class="mini-news">
-                <strong>Shai Hope's record-breaking ODI performance</strong>
-                <span>Cricket • Today</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>India T20 squad and team selection</strong>
-                <span>India • Today</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>Pakistan's new T20 captain</strong>
-                <span>Pakistan • Today</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>ICC World Cup 2027 schedule</strong>
-                <span>ICC • Latest</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>Latest cricket rankings</strong>
-                <span>Rankings • Latest</span>
-            </div>
-
-        </div>
-
-
-        <div class="sidebar-box">
-
-            <h3>📅 Upcoming Matches</h3>
-
-            <div class="mini-news">
-                <strong>India 🇮🇳 vs West Indies 🌴</strong>
-                <span>T20I • Tomorrow</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>Pakistan 🇵🇰 vs Sri Lanka 🇱🇰</strong>
-                <span>T20I • Upcoming</span>
-            </div>
-
-            <div class="mini-news">
-                <strong>Namibia 🇳🇦 vs USA 🇺🇸</strong>
-                <span>World Cup League 2</span>
-            </div>
-
-        </div>
-
-    </aside>
-
-</section>
-
-
-<!-- BLOGS -->
-<div class="section-title">
-    <h2>✍️ Cricket Blogs & Opinion</h2>
-    <a class="view-all" href="#">All Blogs →</a>
-</div>
-
-<section class="blog-grid">
-
-    <article class="blog-card">
-
-        <div class="author">BY CRICKETZONE ANALYSIS</div>
-
-        <h3>
-            Why modern T20 cricket is becoming a battle of strategy
-        </h3>
-
-        <p>
-            From powerplay aggression to death-over bowling,
-            modern T20 cricket demands smarter decisions from captains.
-        </p>
-
-        <div class="date">8 min read</div>
-
-    </article>
-
-
-    <article class="blog-card">
-
-        <div class="author">BY THE CRICKET DESK</div>
-
-        <h3>
-            What makes a world-class opening batter?
-        </h3>
-
-        <p>
-            Technique, strike rotation, power hitting and mental strength
-            all combine to create an elite opening batter.
-        </p>
-
-        <div class="date">6 min read</div>
-
-    </article>
-
-
-    <article class="blog-card">
-
-        <div class="author">BY MATCH ANALYST</div>
-
-        <h3>
-            How data analytics is changing cricket
-        </h3>
-
-        <p>
-            Teams now use data to study players, pitches, match-ups,
-            bowling plans and field placements.
-        </p>
-
-        <div class="date">10 min read</div>
-
-    </article>
-
-</section>
-
-
-<!-- RANKINGS -->
-<div class="section-title">
-    <h2>🏆 Cricket Rankings</h2>
-</div>
-
-<div class="table-box">
-
-<table>
-
-<thead>
-<tr>
-    <th>#</th>
-    <th>Team</th>
-    <th>Format</th>
-    <th>Rating</th>
-    <th>Form</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-    <td>1</td>
-    <td>🇦🇺 Australia</td>
-    <td>Test</td>
-    <td>126</td>
-    <td>W W D W</td>
-</tr>
-
-<tr>
-    <td>2</td>
-    <td>🇿🇦 South Africa</td>
-    <td>Test</td>
-    <td>119</td>
-    <td>W W L W</td>
-</tr>
-
-<tr>
-    <td>3</td>
-    <td>🇳🇿 New Zealand</td>
-    <td>Test</td>
-    <td>106</td>
-    <td>W D W L</td>
-</tr>
-
-<tr>
-    <td>4</td>
-    <td>🇮🇳 India</td>
-    <td>Test</td>
-    <td>104</td>
-    <td>W L W W</td>
-</tr>
-
-<tr>
-    <td>5</td>
-    <td>🏴 England</td>
-    <td>Test</td>
-    <td>99</td>
-    <td>L W W L</td>
-</tr>
-
-</tbody>
-
-</table>
+  </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://cbtf.com/clk?src=dvOFld5Vu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 www.cbtf.com
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/+447716753787"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/+447716753787?text=Hello%20I%20want%20new%20CBTF%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
 
 </div>
+```
 
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-
-    <h2>📩 Get Cricket Updates</h2>
-
-    <p>
-        Breaking cricket news, match reports, blogs and sports updates
-        delivered directly to your inbox.
-    </p>
-
-    <form onsubmit="subscribe(event)">
-
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter your email address"
-            required
-        >
-
-        <button type="submit">
-            SUBSCRIBE
-        </button>
-
-    </form>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-<footer>
-
-<div class="footer-grid">
-
-    <div>
-        <h3>🏏 CRICKETZONE 360</h3>
-
-        <p>
-            Your destination for cricket news, live scores,
-            match analysis, blogs, rankings and global sports updates.
-        </p>
-    </div>
-
-    <div>
-        <h3>Cricket</h3>
-
-        <a href="#">Latest News</a>
-        <a href="#">Live Scores</a>
-        <a href="#">Match Results</a>
-        <a href="#">Schedules</a>
-        <a href="#">Rankings</a>
-    </div>
-
-    <div>
-        <h3>Sports</h3>
-
-        <a href="#">Football</a>
-        <a href="#">Tennis</a>
-        <a href="#">Basketball</a>
-        <a href="#">Formula 1</a>
-        <a href="#">Olympics</a>
-    </div>
-
-    <div>
-        <h3>About</h3>
-
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Advertise</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-    </div>
+  </div>
 
 </div>
-
-<div class="copyright">
-    © 2026 CricketZone 360. All rights reserved.
-</div>
-
-</footer>
-
-
-<script>
-
-function subscribe(event){
-
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-
-    alert(
-        "Thanks for subscribing! Cricket updates will be sent to: "
-        + email
-    );
-
-    document.getElementById("email").value = "";
-}
-
-</script>
 
 </body>
 </html>
-```
